@@ -6,43 +6,101 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1600.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
-      <ColumnConstraints />
+      <ColumnConstraints hgrow="ALWAYS" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints />
    </rowConstraints>
    <children>
-      <TabPane maxHeight="1080.0" maxWidth="1920.0" minHeight="540.0" minWidth="960.0" prefHeight="0.0" prefWidth="0.0" tabClosingPolicy="UNAVAILABLE" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1600.0" tabClosingPolicy="UNAVAILABLE" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
         <tabs>
           <Tab fx:id="mainTab" closable="false" text="Главная">
             <content>
               <AnchorPane>
                      <children>
                         <ButtonBar layoutX="132.0" layoutY="471.0" prefHeight="40.0" prefWidth="242.0" />
-                        <Button fx:id="startButton" layoutX="50.0" layoutY="722.0" mnemonicParsing="false" onAction="#start" text="Start" textAlignment="CENTER" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="100.0" />
-                        <MediaView fx:id="mediaView" fitHeight="360.0" fitWidth="640.0" layoutY="25.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+                        <Button fx:id="startButton" layoutX="150.0" layoutY="701.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#start" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: green;" text="Start" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="410.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect></Button>
+                        <MediaView fx:id="mediaView" fitHeight="630.0" fitWidth="1120.0" layoutY="25.0" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="35.0">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                            <viewport>
-                              <Rectangle2D minX="640.0" minY="360.0" />
+                              <Rectangle2D />
                            </viewport>
                            <effect>
                               <DropShadow />
                            </effect>
                         </MediaView>
-                        <Button fx:id="pauseButton" layoutX="106.0" layoutY="726.0" mnemonicParsing="false" onAction="#pause" text="Pause" textAlignment="CENTER" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="150.0" />
-                        <Button fx:id="openButton" layoutX="95.0" layoutY="673.0" mnemonicParsing="false" onAction="#open" text="Open" textAlignment="CENTER" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" />
-                        <Button fx:id="stopButton" layoutX="197.0" layoutY="650.0" mnemonicParsing="false" onAction="#stop" text="Stop" textAlignment="CENTER" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="200.0" />
+                        <Button fx:id="pauseButton" layoutX="250.0" layoutY="701.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pause" prefHeight="50.0" prefWidth="100.0" text="Pause" textAlignment="CENTER" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="510.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect></Button>
+                        <Button fx:id="openButton" layoutX="95.0" layoutY="673.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#open" prefHeight="50.0" prefWidth="100.0" text="Open" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="35.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect></Button>
+                        <Button fx:id="stopButton" layoutX="350.0" layoutY="701.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stop" prefHeight="50.0" prefWidth="100.0" text="Stop" textAlignment="CENTER" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="610.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect></Button>
+                        <TextArea layoutX="1155.0" prefHeight="200.0" prefWidth="446.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1189.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
             </content>
